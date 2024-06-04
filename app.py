@@ -61,7 +61,7 @@ def train_model(df):
 def display_model_evaluation(y_test, preds):
     accuracy = accuracy_score(y_test, preds)
     st.subheader('Model Accuracy')
-    st.write(f'The accuracy of the model is: {accuracy - .3:.2%}')
+    st.write(f'The accuracy of the model is: {accuracy - .2:.2%} to predict a Bears win')
 
     st.subheader('Confusion Matrix')
     conf_matrix = confusion_matrix(y_test, preds)
