@@ -67,33 +67,11 @@ def display_model_evaluation(y_test, preds):
     conf_matrix = confusion_matrix(y_test, preds)
     st.write(conf_matrix)
 
-    st.subheader('Classification Report')
-    class_report = classification_report(y_test, preds)
+    
 
     report = classification_report(y_test, preds, output_dict=True)
     report_df = pd.DataFrame(report).transpose()
 
-    # Display the classification report
-    st.dataframe(report_df)
-    st.write("""
-    The classification report provides various metrics for evaluating the performance of a classification model. Here's a breakdown of the metrics:
-
-    - **Precision**: This measures the accuracy of positive predictions.
-
-    - **Recall**: This measures the ability of the model to correctly identify all positive instances.
-
-    - **F1-score**: This is the harmonic mean of precision and recall. It provides a balance between precision and recall. The F1-score reaches its best value at 1 and worst at 0.
-
-    - **Support**: Number of actual occurrences of the class in the specified dataset.
-
-    - **Accuracy**: Overall accuracy of the model.
-
-    - **Macro Avg**: Calculates the average of precision, recall, and F1-score across all classes. 
-
-    - **Weighted Avg**: Calculates the weighted average of precision, recall, and F1-score.
-
-
-    """)
 
 # Display win/loss
 def display_win_loss_distribution(df):
